@@ -9,5 +9,7 @@ namespace Data
         private OptionDataData[] optionData;
 
         public OptionDataData[] OptionData => optionData;
+
+        public int Size => optionData.Length;
     }
 }

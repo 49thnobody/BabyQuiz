@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Config
@@ -14,5 +15,7 @@ namespace Config
         private int _columns;
 
         public int Columns => _columns;
+
+        public int Size => _rows * _columns;
     }
 }
