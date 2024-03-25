@@ -3,6 +3,7 @@ using Data;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using VContainer;
 
 namespace GameLoop
 {
@@ -16,12 +17,16 @@ namespace GameLoop
 
         private int _currentConfig;
 
-        [SerializeField]
+        [Inject]
         private LevelBuilder _levelBuilder;
 
         private CellView[,] _cells;
 
         private string _correctAnswer;
+        public string CorrectAnswer => _correctAnswer;
+
+        [Inject]
+        private readonly TipText _tipText;
 
         private void Start()
         {
@@ -30,17 +35,32 @@ namespace GameLoop
 
         private void StartGame()
         {
+            if (_cells != null)
+            {
+                DestroyCells();
+            }
+
             _currentConfig = 0;
 
             var maxSize = new Vector2Int(_configs.Max(c => c.Columns), _configs.Max(c => c.Rows));
             _cells = _levelBuilder.BuildCells(maxSize);
 
             var currentSize = new Vector2Int(_configs[0].Columns, _configs[0].Rows);
-            _levelBuilder.CorrectOffset(currentSize);
 
             ShowHideCells();
 
             FillOptions();
+        }
+
+        private void DestroyCells()
+        {
+            for (int y = 0; y < _cells.GetLength(0); y++)
+            {
+                for (int x = 0; x < _cells.GetLength(1); x++)
+                {
+                    Destroy(_cells[y, x].gameObject);
+                }
+            }
         }
 
         private void FillOptions()
@@ -79,13 +99,15 @@ namespace GameLoop
                 for (int x = 0; x < _configs[_currentConfig].Columns; x++)
                 {
                     var option = bundle.OptionData[options[index]];
-                    _cells[y, x].Set(option.Identifier, option.Sprite);
+                    _cells[y, x].Set(option.Identifier, option.Sprite, this);
 
                     index++;
                 }
             }
 
             _correctAnswer = bundle.OptionData[options[Random.Range(0, options.Count)]].Identifier;
+
+            _tipText.ChangeText(_correctAnswer);
         }
 
         private void ShowHideCells()
@@ -97,6 +119,25 @@ namespace GameLoop
                     _cells[y, x].gameObject.SetActive(y < _configs[_currentConfig].Rows && x < _configs[_currentConfig].Columns);
                 }
             }
+
+            _levelBuilder.CorrectOffset(new Vector2Int(_configs[_currentConfig].Columns, _configs[_currentConfig].Rows));
+        }
+
+        public void NextLevel()
+        {
+            if (_currentConfig + 1 == _configs.Length)
+            {
+                // restart
+                StartGame();
+                // call fade effect and wait
+            }
+            else
+            {
+                _currentConfig++;
+            }
+
+            ShowHideCells();
+            FillOptions();
         }
     }
 }
