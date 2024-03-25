@@ -159,6 +159,12 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "jp.hadashikick.vcontainer": {
+      "version": "file:E:/Downloads/VContainer-1.15.1/VContainer-1.15.1/VContainer/Assets/VContainer",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
