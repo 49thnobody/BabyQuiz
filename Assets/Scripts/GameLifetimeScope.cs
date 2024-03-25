@@ -1,8 +1,10 @@
 using Config;
 using GameLoop;
+using UI;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using Visuals;
 
 namespace DependencyInjection
 {
@@ -23,6 +25,15 @@ namespace DependencyInjection
         [SerializeField]
         private TipText _tipText;
 
+        [SerializeField]
+        private RestartButton _restartButton;
+
+        [SerializeField]
+        private FadeAnimator _fade;
+
+        [SerializeField]
+        private InputSystem _inputSystem;
+
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_gameFieldConfig);
@@ -34,6 +45,12 @@ namespace DependencyInjection
             builder.RegisterComponent(_level);
 
             builder.RegisterComponent(_cellViewPrefab);
+
+            builder.RegisterComponent(_restartButton);
+
+            builder.RegisterComponent(_fade);
+
+            builder.RegisterComponent(_inputSystem);
         }
     }
 }

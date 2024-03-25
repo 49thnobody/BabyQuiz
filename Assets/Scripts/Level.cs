@@ -2,8 +2,11 @@
 using Data;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using UnityEngine;
+using UnityEngine.UI;
 using VContainer;
+using Visuals;
 
 namespace GameLoop
 {
@@ -18,7 +21,7 @@ namespace GameLoop
         private int _currentConfig;
 
         [Inject]
-        private LevelBuilder _levelBuilder;
+        private readonly LevelBuilder _levelBuilder;
 
         private CellView[,] _cells;
 
@@ -28,6 +31,9 @@ namespace GameLoop
         [Inject]
         private readonly TipText _tipText;
 
+        [Inject]
+        private readonly RestartButton _restartButton;
+
         private void Start()
         {
             StartGame();
@@ -35,11 +41,6 @@ namespace GameLoop
 
         private void StartGame()
         {
-            if (_cells != null)
-            {
-                DestroyCells();
-            }
-
             _currentConfig = 0;
 
             var maxSize = new Vector2Int(_configs.Max(c => c.Columns), _configs.Max(c => c.Rows));
@@ -58,7 +59,7 @@ namespace GameLoop
             {
                 for (int x = 0; x < _cells.GetLength(1); x++)
                 {
-                    Destroy(_cells[y, x].gameObject);
+                    _cells[y, x].Destroy();
                 }
             }
         }
@@ -127,17 +128,23 @@ namespace GameLoop
         {
             if (_currentConfig + 1 == _configs.Length)
             {
-                // restart
-                StartGame();
-                // call fade effect and wait
+                _restartButton.Show(() => Restart());
             }
             else
             {
                 _currentConfig++;
+                StartCoroutine(Utils.Wait(.7f, () =>
+                {
+                    ShowHideCells();
+                    FillOptions();
+                }));
             }
+        }
 
-            ShowHideCells();
-            FillOptions();
+        public void Restart()
+        {
+            DestroyCells();
+            StartCoroutine(Utils.Wait(1f, () => StartGame()));
         }
     }
 }

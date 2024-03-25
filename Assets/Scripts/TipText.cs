@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace GameLoop
+namespace UI
 {
     public class TipText : MonoBehaviour
     {

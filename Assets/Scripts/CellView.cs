@@ -9,6 +9,9 @@ namespace GameLoop
         [SerializeField]
         private SpriteRenderer _optionSprite;
 
+        [SerializeField]
+        private CellAnimator _cellAnimator;
+
         private string _option;
 
         public string Option => _option;
@@ -17,7 +20,8 @@ namespace GameLoop
         {
             transform.localPosition = positon;
             transform.localScale = size;
-            // somewhere here can be apearing bounce animation
+
+            _cellAnimator.AnimateApearingDisapearing(true);
         }
 
         public void Set(string option, Sprite sprite, Level level)
@@ -44,14 +48,18 @@ namespace GameLoop
         {
             if (_level.CorrectAnswer == _option)
             {
-                // animation option bounce
-
+                _cellAnimator.AnimateAnswer(true);
                 _level.NextLevel();
             }
             else
             {
-                // animation option easeonbounce
+                _cellAnimator.AnimateAnswer(false);
             }
+        }
+
+        public void Destroy()
+        {
+            _cellAnimator.AnimateApearingDisapearing(false);
         }
     }
 }

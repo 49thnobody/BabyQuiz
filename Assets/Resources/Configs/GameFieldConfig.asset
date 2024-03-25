@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameFieldConfig
   m_EditorClassIdentifier: 
   _cellSize: {x: 2, y: 2}
-  _cellSpacing: 0.1
+  _cellSpacing: 0.15
