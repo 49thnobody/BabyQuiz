@@ -1,19 +1,31 @@
-using System;
 using UnityEngine;
 
-public class CellView : MonoBehaviour
+namespace GameLoop
 {
-    [SerializeField]
-    private SpriteRenderer _optionSprite;
-
-    public void Set(Vector2 size, Vector2 positon)
+    public class CellView : MonoBehaviour
     {
-        transform.localPosition = positon;
-        transform.localScale = size;
-    }
+        [SerializeField]
+        private SpriteRenderer _optionSprite;
 
-    public void Set(Sprite sprite)
-    {
-        _optionSprite.sprite = sprite;
+        private string _option;
+
+        public string Option => _option;
+
+        public void Set(Vector2 size, Vector2 positon)
+        {
+            transform.localPosition = positon;
+            transform.localScale = size;
+        }
+
+        public void Set(string option, Sprite sprite)
+        {
+            _option = option;
+            _optionSprite.sprite = sprite;
+
+            if (option == "7" || option == "8")
+            {
+                _optionSprite.transform.Rotate(new Vector3(0, 0, -90));
+            }
+        }
     }
 }

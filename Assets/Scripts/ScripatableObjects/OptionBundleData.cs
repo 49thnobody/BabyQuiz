@@ -6,9 +6,9 @@ namespace Data
     public class OptionBundleData : ScriptableObject
     {
         [SerializeField]
-        private OptionDataData[] optionData;
+        private OptionData[] optionData;
 
-        public OptionDataData[] OptionData => optionData;
+        public OptionData[] OptionData => optionData;
 
         public int Size => optionData.Length;
     }
