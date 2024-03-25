@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Data
 {
     [Serializable]
-    public class OptionDataData : ScriptableObject
+    public class OptionDataData
     {
         [SerializeField]
         private string _identifier;
