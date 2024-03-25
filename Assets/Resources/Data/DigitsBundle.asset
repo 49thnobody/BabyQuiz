@@ -12,4 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0b7683b979b044b9e2cca2f11ff83f, type: 3}
   m_Name: DigitsBundle
   m_EditorClassIdentifier: 
-  optionData: []
+  optionData:
+  - _identifier: 1
+    _sprite: {fileID: 1422184923334757970, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 2
+    _sprite: {fileID: 1808195818850983521, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 3
+    _sprite: {fileID: -7900951133411543555, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 4
+    _sprite: {fileID: 2267071060405275165, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 5
+    _sprite: {fileID: -7398325283844340781, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 6
+    _sprite: {fileID: -7015292045520539579, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 7
+    _sprite: {fileID: -675344402919758444, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 8
+    _sprite: {fileID: 3547489320769246608, guid: 2e1f08a1025611b4da8689fcbefa883b, type: 3}
+  - _identifier: 9
+    _sprite: {fileID: -1155199509967091035, guid: 43bff3e9635e9ef49826979443c2ffbf, type: 3}

@@ -8,7 +8,11 @@ namespace Config
         [SerializeField]
         private Vector2 _cellSize;
 
+        public Vector2 CellSize => _cellSize;
+
         [SerializeField]
         private float _cellSpacing;
+
+        public float CellSpacing => _cellSpacing;
     }
 }

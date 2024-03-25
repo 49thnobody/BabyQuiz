@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f244d1d7b9efa344caa3f6866d69c52f, type: 3}
   m_Name: GameFieldConfig
   m_EditorClassIdentifier: 
-  _cellSize: {x: 1, y: 1}
+  _cellSize: {x: 2, y: 2}
   _cellSpacing: 0.1
