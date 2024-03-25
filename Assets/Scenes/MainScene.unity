@@ -241,7 +241,7 @@ MonoBehaviour:
   autoInjectGameObjects: []
   _gameFieldConfig: {fileID: 11400000, guid: 9efc9f3bce951b74daaa657cf03aa864, type: 2}
   _cellViewPrefab: {fileID: 137965402738491272, guid: a4dac906b6cdcf145a6c17736d996eb5, type: 3}
-  _levelBuilder: {fileID: 1759551072}
+  _levelBuilder: {fileID: 1759551074}
 --- !u!4 &746212191
 Transform:
   m_ObjectHideFlags: 0
@@ -283,9 +283,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1759551071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e1d2bc98050984ba054ca1793b6004, type: 3}
+  m_Script: {fileID: 11500000, guid: b29e5037724b2784a95df956cbd455b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _configs:
+  - {fileID: 11400000, guid: 19e08163c9f5fb04796185a5fb41bac3, type: 2}
+  - {fileID: 11400000, guid: 64e0f7758a4d0f84e93a7134dc95ad57, type: 2}
+  - {fileID: 11400000, guid: b520cb8a136fafd4090c4ef77d56d146, type: 2}
+  _bundles:
+  - {fileID: 11400000, guid: e07347e36e88cbe41a93ba7f3ff48edb, type: 2}
+  - {fileID: 11400000, guid: d7a47827dc38c96439aac0f3e1be0bd3, type: 2}
+  _levelBuilder: {fileID: 1759551074}
 --- !u!4 &1759551073
 Transform:
   m_ObjectHideFlags: 0
@@ -309,14 +317,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1759551071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ce4b438f6a0abf43869e7923bb05527, type: 3}
+  m_Script: {fileID: 11500000, guid: fd21c886a90b8d0458e5309ba108566e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _configs:
-  - {fileID: 11400000, guid: 19e08163c9f5fb04796185a5fb41bac3, type: 2}
-  - {fileID: 11400000, guid: 64e0f7758a4d0f84e93a7134dc95ad57, type: 2}
-  - {fileID: 11400000, guid: b520cb8a136fafd4090c4ef77d56d146, type: 2}
-  _bundles:
-  - {fileID: 11400000, guid: d7a47827dc38c96439aac0f3e1be0bd3, type: 2}
-  - {fileID: 11400000, guid: e07347e36e88cbe41a93ba7f3ff48edb, type: 2}
-  _levelBuilder: {fileID: 1759551072}

@@ -54,6 +54,7 @@ namespace GameLoop
             return result;
         }
 
+        // this method in case we will have uneven columns counts for levels, so it can be centered
         public void CorrectOffset(Vector2Int size)
         {
             if (size.x < _fieldSize.x)
