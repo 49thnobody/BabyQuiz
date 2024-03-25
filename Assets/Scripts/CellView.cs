@@ -1,5 +1,4 @@
 using UnityEngine;
-using VContainer;
 
 namespace GameLoop
 {
@@ -23,14 +22,16 @@ namespace GameLoop
 
         public void Set(string option, Sprite sprite, Level level)
         {
-            //i hate that but i hot circular dependency, so.. 
+            //i hate that but i hit circular dependency, so.. 
             _level = level;
 
             _option = option;
             _optionSprite.sprite = sprite;
 
+            // fix rotated numbers, yes, i hardcode it, i dont see a realy good way to work araoun that
             if (option == "7" || option == "8")
             {
+                _optionSprite.transform.rotation = new Quaternion(0, 0, 0, 0);
                 _optionSprite.transform.Rotate(new Vector3(0, 0, -90));
             }
             else
