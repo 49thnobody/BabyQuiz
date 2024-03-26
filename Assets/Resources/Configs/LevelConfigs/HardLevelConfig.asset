@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HardLevelConfig
   m_EditorClassIdentifier: 
   _rows: 3
-  _columns: 4
+  _columns: 3
