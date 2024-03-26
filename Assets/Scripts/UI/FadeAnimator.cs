@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Visuals
+namespace UI
 {
     public class FadeAnimator : MonoBehaviour
     {

@@ -26,7 +26,6 @@ namespace GameLoop
 
         public void Set(string option, Sprite sprite, Level level)
         {
-            //i hate that but i hit circular dependency, so.. 
             _level = level;
 
             _option = option;

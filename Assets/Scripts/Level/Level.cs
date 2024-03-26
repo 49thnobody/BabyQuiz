@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UI;
 using UnityEngine;
-using UnityEngine.UI;
 using VContainer;
-using Visuals;
 
 namespace GameLoop
 {

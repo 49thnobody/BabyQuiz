@@ -4,7 +4,6 @@ using UI;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using Visuals;
 
 namespace DependencyInjection
 {

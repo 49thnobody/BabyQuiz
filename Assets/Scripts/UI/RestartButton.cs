@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using VContainer;
-using Visuals;
 
 namespace UI
 {
